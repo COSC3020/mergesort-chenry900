@@ -21,6 +21,30 @@ function mergesort(array) {
 
 function sort(array, size)
 {
-    for (i = 0; i < array.size(); i + size)
+    for (i = 0; i < (array.size() - 1); i + size)//moving through the array by size of split
         {
-            if ((i + size) 
+            if ((i + size) > array.size())//accounts for odd size values
+                odd = i - array.size();
+            two = i + size;
+            one = i;
+            checkPlace = 0;
+            checkSize = checkPlace;
+            for (s = 0; s < size; s++)
+                {
+                    if (array[one] < array[two])
+                    {
+                        swap = array[one];
+                        array[one] = array[two];
+                        array[two] = swap;
+                    }
+                    else
+                    {
+                        check = two;
+                        while (check < array.size() && checkSize < size)
+                            {
+                                if (array[one] < array[check])
+                                {
+                                    check = check + 1;
+                                    checkSize = checkSize + 1;
+                                }
+                                
