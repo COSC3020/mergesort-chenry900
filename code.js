@@ -1,31 +1,20 @@
 function mergesort(array) {
-    x = new int[array.size()];
-    for (int i = 0; i < array.size(); i++)
-    {
+    int x = array.size();
+    for (i = 0; i < array.size(); i + 2)
+        {
+            if ((i + 1) < array.size())
+            {
+                if (array[i] > array[i+1])
+                {
+                    int s = array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = s;
+                }
+            }
+        }
         
     
     
     
     return array;
-}
-function split(array, start) {
-    int h = (array.size()/2)-1;
-    half = new int [h];
-    if (start >= h)
-    {   
-         int p = 0;
-        for (int i = start; i < array.size(); i++)
-        {
-            half[p] = array[i];
-        }
-    }
-    else
-    {
-        for (int i = 0; i < h; i++)
-        {
-            half[i] = array[i];
-        }
-    }
-    return half;
-    
 }
