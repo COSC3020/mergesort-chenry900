@@ -18,3 +18,9 @@ function mergesort(array) {
     
     return array;
 }
+
+function sort(array, size)
+{
+    for (i = 0; i < array.size(); i + size)
+        {
+            if ((i + size) 
