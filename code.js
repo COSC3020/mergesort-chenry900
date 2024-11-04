@@ -1,18 +1,9 @@
 function mergesort(array) {
     int x = array.size();
-    for (i = 0; i < array.size(); i + 2)
+    for (i = 1; i < array.size();i = i * 2)
         {
-            if ((i + 1) < array.size())
-            {
-                if (array[i] > array[i+1])
-                {
-                    int s = array[i];
-                    array[i] = array[i+1];
-                    array[i+1] = s;
-                }
-            }
+            sort(array, i);
         }
-        
     
     
     
@@ -24,27 +15,20 @@ function sort(array, size)
     for (i = 0; i < (array.size() - 1); i + size)//moving through the array by size of split
         {
             if ((i + size) > array.size())//accounts for odd size values
-                odd = i - array.size();
+                size = i - array.size();
             two = i + size;
             one = i;
-            checkPlace = 0;
-            checkSize = checkPlace;
-            for (s = 0; s < size; s++)
+            for (j = one; j < two; j++)
                 {
-                    if (array[one] < array[two])
+                    k = two;
+                    while (array[j] < array[k] && k < two)
+                        k++;
+                    if (array[j] < array[k])
                     {
-                        swap = array[one];
-                        array[one] = array[two];
-                        array[two] = swap;
+                        swap = array[j];
+                        array[j] = array[k];
+                        array[k] = swap;
                     }
-                    else
-                    {
-                        check = two;
-                        while (check < array.size() && checkSize < size)
-                            {
-                                if (array[one] < array[check])
-                                {
-                                    check = check + 1;
-                                    checkSize = checkSize + 1;
-                                }
+                }
+        }
                                 
