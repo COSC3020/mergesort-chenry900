@@ -1,5 +1,5 @@
 function mergesort(array) {
-    int x = array.size();
+    x = array.size();
     for (i = 1; i < array.size();i = i * 2)
         {
             sort(array, i);
@@ -32,3 +32,4 @@ function sort(array, size)
                 }
         }
                                 
+}
