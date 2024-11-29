@@ -6,8 +6,8 @@ function mergesort(array) {
           {
                for(first = 0; first < n; first += 2 * i)
                     {
-                         var middle = Math.min(first + i, n);
-                         var end = Math.min(first + 2 * i, n);
+                         var middle = Math.min(first + f, n);
+                         var end = Math.min(first + 2 * f, n);
                          merge(array, temp, first, middle, end);
                     }
           }
