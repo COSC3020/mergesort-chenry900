@@ -2,7 +2,7 @@ function mergesort(array) {
     var n = array.length;
      var temp = new Array(n);
 
-     for (i = 1; i < n; i *= 2) 
+     for (f = 1; f < n; f *= 2) 
           {
                for(first = 0; first < n; first += 2 * i)
                     {
