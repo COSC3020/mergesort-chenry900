@@ -1,35 +1,36 @@
 function mergesort(array) {
-     var x = array.length;
-    for (i = 1; i < array.length;i = i * 2)
-        {
-            sort(array, i);
-        }
-    
-    
-    
+    var n = array.length;
+     var temp = new Array(n);
+
+     for (i = 1; i < n; i *= 2) 
+          {
+               for(first = 0; first < n; first += 2 * i)
+                    {
+                         var middle = Math.min(first + i, n);
+                         var end = Math.min(first + 2 * i, n);
+                         merge(array, temp, first, middle, end);
+                    }
+          }
+     
     return array;
 }
 
-function sort(array, size)
-{
-    for (i = 0; i < (array.size() - 1); i + size)//moving through the array by size of split
-        {
-            if ((i + size) > array.length)//accounts for odd size values
-                size = i - array.length;
-            var two = i + size;
-            var one = i;
-            for (j = one; j < two; j++)
-                {
-                    k = two;
-                    while (array[j] < array[k] && k < two)
-                        k++;
-                    if (array[j] < array[k])
-                    {
-                        swap = array[j];
-                        array[j] = array[k];
-                        array[k] = swap;
-                    }
-                }
-        }
-                                
+function merge(array, temp, first, middle, end) {
+     var firstNum = first;
+     var middleNum = middle;
+     var tempNum = first;
+     while (firstNum < middle && middleNum < end)
+          {
+               if(array[firstNum] <= array[middleNum])
+                    temp[tempNum++] = array[firstNum++];
+               else
+                    temp[tempNum++] = array[middleNum++];
+          }
+     while (firstNum < middle)
+        temp[tempNum++] = array[firstNum++];
+     while (middleNum < end)
+          temp[tempNum++] = array[middleNum++];
+     for (i = first; i < end; i++)
+          array[i] = temp[i];
+     
 }
