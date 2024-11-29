@@ -4,7 +4,7 @@ function mergesort(array) {
 
      for (f = 1; f < n; f *= 2) 
           {
-               for(first = 0; first < n; first += 2 * i)
+               for(first = 0; first < n; first += 2 * f)
                     {
                          var middle = Math.min(first + f, n);
                          var end = Math.min(first + 2 * f, n);
